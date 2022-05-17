@@ -2,6 +2,8 @@ import gettext
 from appendix import Output
 from pathlib import Path
 LOCALEDIR = Path(__file__).parent / 'locales'
+
+
 def print_some_strings():
     print(_("one"))
     print(_("two"))
