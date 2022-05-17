@@ -1,6 +1,7 @@
 import gettext
 from appendix import Output
-
+from pathlib import Path
+LOCALEDIR = Path(__file__).parent / 'locales'
 def print_some_strings():
     print(_("one"))
     print(_("two"))
@@ -8,8 +9,9 @@ def print_some_strings():
 
 def reload_lang(lang):
     import gettext
-    ru = gettext.translation('base', localedir=r'C:\Users\belose\PycharmProjects\test_gettext\locales', languages=['ru'])
+    ru = gettext.translation('base', localedir=LOCALEDIR, languages=['ru'])
     ru.install()
+
     global _
     if lang == 'RUSSIAN':
         _ = ru.gettext
